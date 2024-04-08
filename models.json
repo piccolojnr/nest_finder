@@ -1,0 +1,110 @@
+{
+    "users": [
+      {
+        "_id": "ObjectId(user_id)",
+        "username": "username",
+        "email": "email@example.com",
+        "password": "hashed_password",
+        "profile_picture": "profile_picture_url",
+        "contact_information": {
+          "phone_number": "123-456-7890",
+          "address": "123 Main St, City, Country"
+        },
+        "role": "user",
+        "property_owner_profile": {
+          "_id": "ObjectId(property_owner_profile_id)",
+          "user_id": "ObjectId(user_id)",
+          "contact_information": {
+            "phone_number": "123-456-7890",
+            "address": "123 Main St, City, Country"
+          },
+          "bio": "Property owner bio or description",
+          "owned_properties": [
+            "ObjectId(property_id_1)",
+            "ObjectId(property_id_2)"
+          ]
+        }
+      }
+    ],
+    "properties": [
+      {
+        "_id": "ObjectId(property_id)",
+        "title": "Property title",
+        "description": "Property description",
+        "type": "Property type",
+        "address": {
+          "street": "123 Main St",
+          "city": "City",
+          "state": "State",
+          "zip_code": "12345"
+        },
+        "location": {
+          "type": "Point",
+          "coordinates": ["longitude", "latitude"]
+        },
+        "price": 1000000,
+        "area": 2000,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "amenities": ["Swimming pool", "Garden", "Garage"],
+        "images": ["image_url_1", "image_url_2"],
+        "status": "available",
+        "analytics": {
+          "views": 1000,
+          "inquiries": 50,
+          "favorites": 20
+        }
+      }
+    ],
+    "transactions": [
+      {
+        "_id": "ObjectId(transaction_id)",
+        "property_id": "ObjectId(property_id)",
+        "buyer_id": "ObjectId(user_id)",
+        "seller_id": "ObjectId(property_owner_profile_id)",
+        "transaction_type": "buy",
+        "transaction_date": "ISODate(2024-04-05T00:00:00)",
+        "transaction_amount": 1000000
+      }
+    ],
+    "reviews": [
+      {
+        "_id": "ObjectId(review_id)",
+        "property_id": "ObjectId(property_id)",
+        "reviewer_id": "ObjectId(user_id)",
+        "rating": 5,
+        "review_text": "Great property!",
+        "date_of_review": "ISODate(2024-04-05T00:00:0)"
+      }
+    ],
+    "saved_searches": [
+      {
+        "_id": "ObjectId(saved_search_id)",
+        "user_id": "ObjectId(user_id)",
+        "search_criteria": {
+          "location": "City",
+          "price_range": [100000, 500000],
+          "bedrooms": 2
+        },
+        "date_saved": "ISODate(2024-04-05T00:00:0)"
+      }
+    ],
+    "interactions": [
+      {
+        "_id": "ObjectId(interaction_id)",
+        "property_id": "ObjectId(property_id)",
+        "owner_id": "ObjectId(property_owner_profile_id)",
+        "interested_user_id": "ObjectId(user_id)",
+        "interaction_type": "inquiry",
+        "timestamp": "ISODate(2024-04-05T00:00:0)"
+      }
+    ],
+    "admin_actions": [
+      {
+        "_id": "ObjectId(admin_action_id)",
+        "user_id": "ObjectId(admin_user_id)",
+        "action": "Property added",
+        "timestamp": "ISODate(2024-04-05T00:00:0)"
+      }
+    ]
+  }
